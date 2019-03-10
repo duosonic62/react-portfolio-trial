@@ -5,7 +5,7 @@ import Link from '@material-ui/core/Link';
 
 import './App.css';
 import Counter from './containers/counter';
-import Layout from './components/Layout/Layout';
+import Layout from './hoc/Layout/Layout';
 
 class App extends Component {
   render() {

@@ -1,6 +1,6 @@
-import React from 'react'
+import React from 'react';
 
-import Navber from './Navbar/Navber';
+import Navber from '../../components/Navigation/Navbar/Navber';
 
 const layout = (props) => {
     return (

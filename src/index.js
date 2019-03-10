@@ -36,12 +36,13 @@ const store = createStore(
 // material-ui setting
 const theme = createMuiTheme({
     typography: {
+        useNextVariants: true,
         fontFamily: [
             'Noto Sans',
             'sans-serif',
         ].join(','),
     },
-})
+});
 
 
 

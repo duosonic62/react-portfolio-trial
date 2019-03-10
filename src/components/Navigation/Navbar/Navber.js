@@ -12,7 +12,16 @@ const navber = (props) => {
             <AppBar position="static">
                 <Toolbar variant="dense">
                     <Typography variant="h6" color="inherit">
-                        Counter
+                        Asahito Akagi
+                    </Typography>
+                    <Typography variant="h6" color="inherit">
+                        Portfolio
+                    </Typography>
+                    <Typography variant="h6" color="inherit">
+                        Works
+                    </Typography>
+                    <Typography variant="h6" color="inherit">
+                        Contact
                     </Typography>
                 </Toolbar>
             </AppBar>
