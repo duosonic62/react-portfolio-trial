@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
-import { Route, Switch, NavLink } from 'react-router-dom';
-
-import Link from '@material-ui/core/Link';
+import { Route, Switch} from 'react-router-dom';
 
 import './App.css';
+
 import Counter from './containers/counter';
+import Home from './containers/Home/Home';
+
 import Layout from './hoc/Layout/Layout';
 
 class App extends Component {
@@ -15,11 +16,9 @@ class App extends Component {
         {/* <NavLink
           to="/counter"
           exact={true}>Counter</NavLink> */}
-        <Link component={NavLink} to="/counter" exact={true}>
-          Link
-        </Link>
         <Switch>
           <Route path="/counter" component={Counter} />
+          <Route path="/" exact component={Home} />
         </Switch>
       </div>
     );
