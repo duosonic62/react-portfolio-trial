@@ -5,11 +5,13 @@ import Typography from '@material-ui/core/Typography';
 import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
 import List from '@material-ui/core/List';
-import Divider from '@material-ui/core/Divider';
+// import Divider from '@material-ui/core/Divider';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemText from '@material-ui/core/ListItemText';
 import Drawer from '@material-ui/core/Drawer';
 import Link from '@material-ui/core/Link';
+
+import { contentsList } from '../../../../assets/ContentsList/contentsList';
 
 const toolbar = () => {
 
@@ -18,29 +20,17 @@ const toolbar = () => {
     const sideList = (
         <div>
             <List>
-                <Link component={NavLink} to="/" exact={true} color="inherit">
-                    <ListItem button>
-                        <ListItemText primary="Home" />
-                    </ListItem>
-                </Link>
+                {
+                    Object.keys(contentsList).map(content => (
+                        <Link component={NavLink} to={contentsList[content].path} exact={true} color="inherit" key={content}>
+                            <ListItem button>
+                                <ListItemText primary={contentsList[content].name} />
+                            </ListItem>
+                        </Link>
+                    ))
+                }
             </List>
-            <Divider />
-            <List>
-                <Link component={NavLink} to="/counter" exact={true} color="inherit">
-                    <ListItem button>
-                        <ListItemText primary="Portfolio" />
-                    </ListItem>
-                </Link>
-                <ListItem button>
-                    <ListItemText primary="About" />
-                </ListItem>
-                <ListItem button>
-                    <ListItemText primary="Works" />
-                </ListItem>
-                <ListItem button>
-                    <ListItemText primary="Contact" />
-                </ListItem>
-            </List>
+
         </div>
     );
 
