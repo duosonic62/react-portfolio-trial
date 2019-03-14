@@ -1,8 +1,37 @@
 import React from 'react';
 
+import Slider from 'react-slick';
+
+import { homeContents } from '../../assets/HomeContents/homeContents';
+
+import classes from './Home.module.css';
+
+import hoge from '../../assets/HomeContents/images/hoge.JPG';
+import huga from '../../assets/HomeContents/images/huga.JPG';
+
 const home = () => {
+    const contents = (
+        Object.keys(homeContents).map(content => (
+            <div key={content} className={classes.content}>
+                <img src={huga} className={classes.img} />
+            </div>
+        ))
+    );
+
+    const settings = {
+        dots: true,
+        infinite: true,
+        speed: 500,
+        slidesToShow: 1,
+        slidesToScroll: 1
+    };
+
     return (
-        <h1>home</h1>
+        <div className={classes.Home}>
+            <Slider {...settings} >
+                {contents}
+            </Slider>
+        </div>
     );
 };
 
