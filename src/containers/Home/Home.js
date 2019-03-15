@@ -6,7 +6,6 @@ import { homeContents } from '../../assets/HomeContents/homeContents';
 
 import classes from './Home.module.css';
 
-import hoge from '../../assets/HomeContents/images/hoge.JPG';
 import huga from '../../assets/HomeContents/images/huga.JPG';
 
 const home = () => {

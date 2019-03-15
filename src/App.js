@@ -5,6 +5,7 @@ import './App.css';
 
 import Counter from './containers/counter';
 import Home from './containers/Home/Home';
+import About from './containers/About/About';
 
 import Layout from './hoc/Layout/Layout';
 
@@ -18,6 +19,7 @@ class App extends Component {
           exact={true}>Counter</NavLink> */}
         <Switch>
           <Route path="/counter" component={Counter} />
+          <Route path="/about" component={About} />
           <Route path="/" exact component={Home} />
         </Switch>
       </div>

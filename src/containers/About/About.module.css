@@ -1,0 +1,12 @@
+.About {
+    width: 90%;
+    margin-top: 40px;
+    margin: auto; 
+    text-align: center;
+}
+
+.About img {
+    width: 80%;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
