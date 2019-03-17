@@ -1,20 +1,30 @@
-import React from 'react';
-import { worksContents } from '../../assets/WorksContents/worksContents';
+import React, { useEffect } from 'react';
+import { connect } from 'react-redux';
+
+import * as actions from '../../store/actions/index';
 
 import Divider from '@material-ui/core/Divider';
-
 import classes from './Works.module.css';
 
-const works = () => {
-    const worksList = Object.keys(worksContents).map(key => (
-        <React.Fragment>
-            <div key={key}>
-                <p><a href={worksContents[key].url}>{worksContents[key].title}</a></p>
-                <p>{worksContents[key].date} - {worksContents[key].publisher}</p>
-            </div>
-            <Divider />
-        </React.Fragment>
-    ));
+const works = (props) => {
+    useEffect(() => {
+        props.onGetWorksContents();
+    }, []);
+
+    console.log(props);
+
+    let worksList = null;
+    if (props.worksContents) {
+        worksList = Object.keys(props.worksContents).map(key => (
+            <React.Fragment key={key}>
+                <div>
+                    <p><a href={props.worksContents[key].url}>{props.worksContents[key].title}</a></p>
+                    <p>{props.worksContents[key].date} - {props.worksContents[key].publisher}</p>
+                </div>
+                <Divider />
+            </React.Fragment>
+        ));
+    }
 
     return (
         <div className={classes.Works}>
@@ -23,4 +33,16 @@ const works = () => {
     );
 };
 
-export default works;
+const mapStateToProps = state => {
+    return {
+        worksContents: state.works.contents
+    };
+};
+
+const mapDispatchToProps = dispatch => {
+    return {
+        onGetWorksContents: () => dispatch(actions.getWroksContents())
+    };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(works);

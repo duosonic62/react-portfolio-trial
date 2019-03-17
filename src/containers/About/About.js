@@ -9,13 +9,20 @@ const about = props => {
     useEffect(() => {
         // use async method
         console.log('[about] component did mout.');
+
     }, []);
 
     return (
         <div className={classes.About}>
-            <h2>{aboutContents.name}</h2>
-            <img src={hoge} />
-            <p>{aboutContents.description}</p>
+            {
+                aboutContents ?
+                    <React.Fragment>
+                        <h2>{aboutContents.name}</h2>
+                        <img src={hoge} />
+                        <p>{aboutContents.description}</p>
+                    </React.Fragment>
+                    : null
+            }
         </div>
     );
 };

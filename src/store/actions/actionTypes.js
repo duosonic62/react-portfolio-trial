@@ -1,2 +1,4 @@
 export const ADD_COUNTER = 'ADD_COUNTER';
 export const SUB_COUNTER = 'SUB_COUNTER';
+
+export const GET_WORKS_CONTETS = 'GET_WORKS_CONTENTS';

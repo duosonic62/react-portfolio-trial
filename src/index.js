@@ -15,12 +15,14 @@ import App from './App';
 import * as serviceWorker from './serviceWorker';
 
 import countReducer from './store/reducers/counter';
+import worksReducer from './store/reducers/works';
 
 // if I apply middleware...
 // const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
 const rootReducer = combineReducers({
-    counter: countReducer
+    counter: countReducer,
+    works: worksReducer
 });
 
 // if I apply middleware...
